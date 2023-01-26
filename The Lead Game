@@ -11,48 +11,39 @@ class Codechef
 	{
 		// your code goes here
 		Scanner sc=new Scanner(System.in);
-		int d=0;
+		int d1=0;
+		int d2=0;
 		int p1s=0;
 		int p2s=0;
+		int l1=0,l2=0;
 		int t=sc.nextInt();
 		int arr[]=new int[t] ;
 		int arr2[]=new int[t];
 		for ( int i=0;i<t;i++){
 		    int p1=sc.nextInt();
 		    int p2=sc.nextInt();
-		    if (p1>p2){
-		        arr[d]=p1-p2;
-		        d++;
-		        p1s=p1-p2;
+		    p1s=p1+p1s;
+		    p2s=p2s+p2;
+		    if(p1s>=p2s){
+		        d1=p1s-p2s;
 		    }
 		    else{
-		        arr2[d]=p2-p1;
-		        d++;
-		        p2s=p2-p1;
+		        d2=p2s-p1s;
 		    }
-		    
-		} int w=0;
-		int p=1;
-		int max=arr[0];
-		if(p1s>=p2s){
-		   max=arr[0]; 
-		for(int i=0;i<t;i++){
-		    if(arr[i]>max){
-		        w=i;
+		    if(l1<d1){
+		        l1=d1;
 		    }
-		}
-		System.out.println(p+" "+arr[w]);
+		    if(l2<d2){
+		       l2=d2;
+		    }
+		}int l=0;
+		if(l1>l2){
+		    l=1;
+		    System.out.print(l+" "+l1);
 		}
 		else{
-		    
-		max=arr2[0];
-		for(int i=0;i<t;i++){
-		    if(arr2[i]>max){
-		        w=i;
-		    }
-		}
-		p=2;
-		System.out.println(p+" "+arr2[w]);
+		    l=2;
+		    System.out.print(l+" "+l2);
 		}
 	}
 }
